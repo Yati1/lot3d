@@ -11,7 +11,13 @@ function [newTrackers, cntTracker] = NewTargetDetection(stStereoModel, stTrackin
 %                 if ( trackers(n).start + trackers(n).tm0 - 1 == t )
 %                     d3CurrentPositions = [d3CurrentPositions  trackers(n).states(:,trackers(n).tm0)];
 %                 end
-            d3CurrentPositions = [d3CurrentPositions  trackers(n).states(:,t-trackers(n).start+1)];
+            disp('Debug output:');
+            disp(['idxActive=',num2str(idxActive)]);
+            %disp(['n=',num2str(n)]);
+            disp(['trackers(n).states size=',num2str(size(trackers(n).states))]);
+            disp(['t=',num2str(t)]);
+            disp(['t-trackers(n).start+1=',num2str(t-trackers(n).start+1)]);
+            d3CurrentPositions = [d3CurrentPositions  trackers(n).states(:,min(t-trackers(n).start+1,size(trackers(n).states,2)))];
         end
     end    
 
