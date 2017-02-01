@@ -35,3 +35,9 @@ The 'states' structure:
 >   Rows 1-3 is the current frame's position
 >   Rows 4-5 is the current frame's orientation
 >   Rows 6-8 is the previous frame's position
+
+======================================================================
+Ground truth info
+======================================================================
+The ground truth for the demo can be found in 'simu10/trajectories010.mat'.
+It contains the 3D positions, orientations and velocities of the 10 simulated flies.
