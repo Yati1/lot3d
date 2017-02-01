@@ -60,7 +60,7 @@ end
 % end
 
 %------------------------------------------------------------------------
-MOTP = dis/cnt
+motp1 = dis/cnt
 
 misses = 0;
 for i = 1 : length(trajectories)
@@ -79,7 +79,7 @@ for o = 1 : length(trackers)
     mismatches = mismatches + numel(mme) - 1;
 end
 
-MOTA = 1 - (misses+fpostives+mismatches) / (Datasets(ds,1)*(Datasets(ds,3)-Datasets(ds,2)+1))
+mota1 = 1 - (misses+fpostives+mismatches) / (Datasets(ds,1)*(Datasets(ds,3)-Datasets(ds,2)+1))
 
 %%
 %
@@ -123,7 +123,7 @@ end
 % end
 
 %%
-MOTP = dis/cnt
+motp2 = dis/cnt
 
 misses = 0;
 for i = 1 : length(trajectories)
@@ -142,7 +142,7 @@ for o = 1 : length(trackers)
     mismatches = mismatches + numel(mme) - 1;
 end
 
-MOTA = 1 - (misses+fpostives+mismatches) / (Datasets(ds,1)*(Datasets(ds,3)-Datasets(ds,2)+1))
+mota2 = 1 - (misses+fpostives+mismatches) / (Datasets(ds,1)*(Datasets(ds,3)-Datasets(ds,2)+1))
 
 
 

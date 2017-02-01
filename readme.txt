@@ -41,3 +41,11 @@ Ground truth info
 ======================================================================
 The ground truth for the demo can be found in 'simu10/trajectories010.mat'.
 It contains the 3D positions, orientations and velocities of the 10 simulated flies.
+
+======================================================================
+Info about resultOrientation and resultLocation
+======================================================================
+These plot graphs.
+
+resultLocation seems to have hard coded results in lines 150~153 that are shown on the plot.
+The MOTA and MOTP of the demo output is just printed to console  
