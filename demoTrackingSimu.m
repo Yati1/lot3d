@@ -3,8 +3,9 @@ clc;
 
 %%
 clear all
+%stores info about the dataset [numInsects,UNKNOWN,numFrames]
 Datasets = [  5,2,1001;
-             10,2,1001;
+             10,2,1001; % this I think corresponds to 10 insects
              20,2,1001;
              40,2,1001;
              80,2,1001;
@@ -64,7 +65,7 @@ trackers = NewTargetDetection(stStereoModel, stTrackingParameter, [], tm1Frame, 
 %         d2Locations(1:2, :) = d2Locations(1:2, :) ./ repmat(d2Locations(3, :), 2, 1); 
 %         plot(d2Locations(1, :), d2Locations(2, :), 'or', 'markersize', 5);        
 %     end
-%     return;
+%      return;
 %     %------------------------------------------------------------------------------
 tm1Frame = tm0Frame; clear tm0Frame
 save('d3TrackingData.mat','stTrackingParameter','trackers','tm1Frame');
@@ -73,6 +74,7 @@ toc
 %% 
 % tracking
 %
+% iterate through the rest of the images in the directory
 for n=StartImageSeq+2 :  Datasets(ds,3)
     t = n-StartImageSeq+1; 
     display(['tracking image ',num2str(n),' at time ',num2str(t)]); tic
@@ -122,3 +124,5 @@ for n=StartImageSeq+2 :  Datasets(ds,3)
         save(sprintf('d3TrackingData_%03d_t%04d.mat',Datasets(ds,1),t), 'stTrackingParameter', 'trackers'); end    
     
 end
+
+disp('Simulation complete!');
