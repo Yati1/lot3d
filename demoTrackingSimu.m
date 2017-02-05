@@ -5,14 +5,14 @@ clc;
 clear all
 %stores info about the dataset [numInsects,UNKNOWN,numFrames]
 Datasets = [  5,2,1001;
-             10,2,1001; % this I think corresponds to 10 insects
+             10,2,1001;%10,2,1001; % this I think corresponds to 10 insects
              20,2,1001;
              40,2,1001;
              80,2,1001;
             160,2,1001];  
 ds = 2;
-DatasetPath = sprintf('simu%03d',Datasets(ds, 1));
-load (sprintf('simu%03d\\stereoModel.mat', Datasets(ds, 1)));
+DatasetPath = sprintf('conf_simu%03d',Datasets(ds, 1));%sprintf('simu%03d',Datasets(ds, 1));
+load (sprintf('conf_simu%03d\\stereoModel.mat', Datasets(ds, 1)));
 StartImageSeq = Datasets(ds,2);
 isdebug = 1;
 ismultijob = 0;
