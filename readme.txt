@@ -29,6 +29,9 @@ trackers has many rows and 10 fields (columns). The 'states' field contains the 
 What each row represents is unclear. Maybe each row is a tracker initialized at the frame numbered in the 'start' field and
 ended in the 'end' field.
 
+The 'tm0' and 'tm1' if the (*maybe*) indexes for 'states' that the was the trackers last success.
+'tm0' is the latest frame to be processed and 'tm1' is the one right before it. 
+
 'states' appears to contain the position and orientation info for one fly for a number of frames
 The 'states' structure:
 >   has 8 rows and numFrames column.
@@ -48,4 +51,4 @@ Info about resultOrientation and resultLocation
 These plot graphs.
 
 resultLocation seems to have hard coded results in lines 150~153 that are shown on the plot.
-The MOTA and MOTP of the demo output is just printed to console  
+The MOTA and MOTP of the demo output is just printed to console
