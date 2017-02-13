@@ -13,7 +13,7 @@ ds = 2;
 StartImageSeq = Datasets(ds,2);
 outputFile = './conf_simu10_results/d3TrackingData_010_t1000.mat';
 inputDatasetPath = 'conf_simu010';
-load (sprintf('conf_simu%03d\\stereoModel.mat', Datasets(ds, 1)));
+load (sprintf('conf_simu%03d/stereoModel.mat', Datasets(ds, 1)));
 load(outputFile)
 
 figPath = './conf_simu10_results/figures'; 
@@ -21,7 +21,7 @@ mkdir(figPath);
 
 n = StartImageSeq+1;
 for v=1:stTrackingParameter.numCamera
-    I1 = imread(sprintf('%s\\cam%d\\im%d%03d.jpg',inputDatasetPath,v,v,n)); %I1 = im2double(I1); 
+    I1 = imread(sprintf('%s/cam%d/im%d%03d.jpg',inputDatasetPath,v,v,n)); %I1 = im2double(I1); 
     tm0Frame.cams(v).image = I1;
     tm0Frame.cams(v).regions = GetMeasurement(tm0Frame.cams(v).image);
 end  
@@ -31,7 +31,7 @@ for n=StartImageSeq+2 :  Datasets(ds,3)
     display(['tracking image ',num2str(n),' at time ',num2str(t)]);
     %------------------------------------------------------
     for v = 1 : stTrackingParameter.numCamera
-        I1 = imread(sprintf('%s\\cam%d\\im%d%03d.jpg',inputDatasetPath,v,v,n));
+        I1 = imread(sprintf('%s/cam%d/im%d%03d.jpg',inputDatasetPath,v,v,n));
         tm0Frame.cams(v).image = I1;
         tm0Frame.cams(v).regions = GetMeasurement(tm0Frame.cams(v).image);     
     end   
